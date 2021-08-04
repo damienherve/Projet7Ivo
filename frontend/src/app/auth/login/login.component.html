@@ -1,0 +1,125 @@
+<div class="backgroundImage"></div>
+<header class="d-flex align-items-center justify-content-around text-center">
+  <nav class="col-12 navbar navbar-expand p-0">
+    <div class="container-fluid col-12 bg-warning p-0">
+      <div
+        class="navbar-nav logo col-4 align-items-center justify-content-start"
+      >
+        <a class="nav-link mb-0 mt-2 p-0" [routerLink]="['']"
+          ><img
+            class="img-fluid"
+            src="assets/image/logo.png"
+            title="Groupomania"
+            alt="Groupomania"
+        /></a>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="logCard d-flex justify-content-center col-12">
+    <form [formGroup]="loginForm" class="logForm">
+      <div class="logLogo d-flex justify-content-center">
+        <img
+          src="../../assets/image/logImage.png"
+          class="logCardTop m-3 mt-4"
+          alt="image"
+        />
+      </div>
+      <div class="logMail mb-3 m-3">
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          id="exampleInputText"
+          aria-describedby="textHelp"
+          placeholder="Votre Email"
+        />
+        <div id="textHelp" class="form-text text-white mb-4">
+          Veuillez renseigner votre adresse Email.
+        </div>
+
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Mot de passe"
+        />
+      </div>
+      <div class="logCardFooter mb-4">
+        <button
+          [disabled]="loginForm.invalid"
+          (click)="onLogin()"
+          type="submit"
+          class="btn btn-warning col-11 m-3 text-dark fw-bold"
+        >
+          Se connecter
+        </button>
+        <a class="col-11 m-3 text-white" [routerLink]="['/signup']"
+          >Nouvel Utilisateur ?</a
+        >
+      </div>
+    </form>
+  </div>
+</main>
+<footer class="bg-warning text-center text-white">
+  <div class="topFooter container">
+    <section>
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="list-unstyled mt-0">
+            <li>
+              <a
+                class="text-dark fw-bold text-decoration-none"
+                [routerLink]="['/politique']"
+                >Politique de confidentialité</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="list-unstyled">
+            <li>
+              <a
+                class="text-dark fw-bold text-decoration-none"
+                [routerLink]="['/cgu']"
+                >Termes et conditions</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="list-unstyled">
+            <li>
+              <a
+                class="text-dark fw-bold text-decoration-none"
+                [routerLink]="['/about']"
+                >A propos</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="list-unstyled">
+            <li>
+              <a
+                href="mailto:groupomania@oursite.com"
+                class="text-dark fw-bold text-decoration-none"
+                >Nous contacter</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div
+    class="botFooter text-center p-3 text-dark fw-bold"
+    style="background-color: rgba(0, 0, 0, 0.2)"
+  >
+    <div class="allRights">
+      <p>@ 2021 All Rights Reserved Groupomania</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,174 @@
+<div class="backgroundImage"></div>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+    <div class="container-fluid bg-warning">
+      <div class="navbar-nav col-4 justify-content-start">
+        <a class="nav-link p-0" [routerLink]="['']"
+          ><img
+            src="assets/image/logo.png"
+            title="Groupomania"
+            alt="Groupomania"
+        /></a>
+      </div>
+      <div class="navbar-nav col-8 justify-content-end align-items-center">
+        <div class="notification col-1 d-flex justify-content-start">
+          <div class="dropdown">
+            <button
+              class="btn dropdown-toggle position-relative"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="far fa-bell fa-2x text-dark"></i>
+              <span
+                class="
+                  position-absolute
+                  top-0
+                  start-100
+                  translate-middle
+                  badge
+                  rounded-pill
+                  bg-dark
+                "
+              >
+                99+
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+            <ul
+              class="dropdown-menu p-0 dropdown-menu-end"
+              aria-labelledby="dropdownMenuButton1"
+            >
+              <li>
+                <a class="dropdown-item text-white" href="#">
+                  <div
+                    class="
+                      dropDownItemTop
+                      d-flex
+                      align-items-center
+                      justify-content-around
+                    "
+                  >
+                    <p class="m-0 ml-2">Nom de la personne</p>
+                  </div>
+                  <p class="mt-2">"a réagit à un de vos messages"</p>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item text-white" href="#">
+                  <div
+                    class="
+                      dropDownItemTop
+                      d-flex
+                      align-items-center
+                      justify-content-around
+                    "
+                  >
+                    <p class="m-0 ml-2">Nom de la personne</p>
+                  </div>
+                  <p class="mt-2">"a réagit à un de vos messages"</p>
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item text-white" href="#">
+                  <div
+                    class="
+                      dropDownItemTop
+                      d-flex
+                      align-items-center
+                      justify-content-around
+                    "
+                  >
+                    <p class="m-0 ml-2">Nom de la personne</p>
+                  </div>
+                  <p class="mt-2">"a réagit à un de vos messages"</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a class="nav-link text-dark fw-bold" [routerLink]="['/forum']"
+          >Forum</a
+        >
+        <a class="nav-link text-dark fw-bold" [routerLink]="['/profile']"
+          >Profile</a
+        >
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="about col-12 text-white row justify-content-center">
+    <div class="presentation col-8 mt-4 fs-4 row justify-content-center">
+      <img src="assets/image/logImage.png" alt="logo" class="col-8" />
+      <p class="mb-5">
+        Notre entreprise, spécialisée dans la grande distribution, est en pleine
+        expansion. Nous avons actuellement plus de 600 collaborateurs et avons
+        beaucoup recruté depuis quelques années. Nous étions uniquement 300 il y
+        a 3 ans.
+      </p>
+    </div>
+  </div>
+</main>
+<footer class="bg-warning text-center text-white">
+  <div class="topFooter container p-4">
+    <section>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a
+                class="text-dark fw-bold text-decoration-none"
+                [routerLink]="['/politique']"
+                >Politique de confidentialité</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a
+                class="text-dark fw-bold text-decoration-none"
+                [routerLink]="['/cgu']"
+                >Termes et conditions</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a
+                class="text-dark fw-bold text-decoration-none"
+                [routerLink]="['/about']"
+                >A propos</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a
+                href="mailto:groupomania@oursite.com"
+                class="text-dark fw-bold text-decoration-none"
+                >Nous contacter</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div
+    class="botFooter text-center p-3 text-dark fw-bold"
+    style="background-color: rgba(0, 0, 0, 0.2)"
+  >
+    <div class="allRights">
+      <p>@ 2021 All Rights Reserved Groupomania</p>
+    </div>
+  </div>
+</footer>
