@@ -1,0 +1,24 @@
+footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+
+  .topFooter {
+    height: auto;
+    font-size: smaller;
+
+    li {
+      height: auto;
+    }
+  }
+
+  .botFooter {
+    height: 45px;
+
+    li {
+      height: 22px;
+    }
+  }
+}

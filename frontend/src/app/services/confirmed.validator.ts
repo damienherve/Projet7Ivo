@@ -1,10 +1,9 @@
-import {
-  FormGroup
-}
+import { FormGroup } from '@angular/forms';
 
-from '@angular/forms';
-
-export function ConfirmedValidator(controlName: string, matchingControlName: string) {
+export function ConfirmedValidator(
+  controlName: string,
+  matchingControlName: string
+) {
   return (formGroup: FormGroup) => {
     const control = formGroup.controls[controlName];
     const matchingControl = formGroup.controls[matchingControlName];
@@ -15,12 +14,10 @@ export function ConfirmedValidator(controlName: string, matchingControlName: str
 
     if (control.value !== matchingControl.value) {
       matchingControl.setErrors({
-          confirmedValidator: true
-        }
-
-      );
+        confirmedValidator: true,
+      });
     } else {
       matchingControl.setErrors(null);
     }
-  }
+  };
 }

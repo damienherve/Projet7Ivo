@@ -14,7 +14,7 @@ module.exports = (sequelize) =>
       type: DataTypes.STRING,
     },
     claps: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.INTEGER,
       defaultValue: 0,
     },
   });

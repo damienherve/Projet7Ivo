@@ -1,0 +1,56 @@
+<div class="backgroundImage"></div>
+<main>
+  <div class="logCard d-flex col-12 justify-content-center">
+    <form [formGroup]="loginForm" class="logForm col-md-6 col-10">
+      <div class="logLogo d-flex justify-content-center">
+        <img
+          src="../../../assets/image/logImage.png"
+          class="logCardTop m-3"
+          alt="image"
+        />
+      </div>
+      <div class="mb-3 m-3">
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          id="exampleInputText"
+          aria-describedby="textHelp"
+          placeholder="Votre Email"
+        />
+        <div id="textHelp" class="form-text text-white mb-3">
+          Veuillez renseigner votre adresse Email
+        </div>
+
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Mot de passe"
+        />
+      </div>
+      <div class="logCardFooter mb-4 col-12 d-md-flex justify-content-between">
+        <a class="m-3 text-white" [routerLink]="['/signup']"
+          >Nouvel Utilisateur ?</a
+        >
+        <button
+          [disabled]="loginForm.invalid"
+          (click)="onLogin()"
+          type="submit"
+          class="
+            btn btn-warning
+            me-4
+            ms-4
+            mt-3
+            text-dark
+            fw-bold
+            col-md-4 col-10
+          "
+        >
+          Se connecter
+        </button>
+      </div>
+    </form>
+  </div>
+</main>

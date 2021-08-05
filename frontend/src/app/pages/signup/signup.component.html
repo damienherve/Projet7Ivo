@@ -1,0 +1,77 @@
+<div class="backgroundImage"></div>
+<main>
+  <div class="logCard col-12 d-flex justify-content-center mt-5">
+    <form [formGroup]="signupForm" class="logForm col-md-6 col-10">
+      <div class="logLogo d-flex justify-content-center">
+        <img
+          src="../../../assets/image/logImage.png"
+          class="logCardTop m-3"
+          alt="image"
+        />
+      </div>
+
+      <div class="mb-3 m-3">
+        <input
+          formControlName="fullName"
+          class="form-control"
+          type="text"
+          placeholder="Nom ... Prénom ..."
+        />
+        <div id="textHelp" class="form-text text-white mb-3">
+          Veuillez renseigner votre nom et votre prénom.
+        </div>
+
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          id="InputEmail1"
+          aria-describedby="TextHelp"
+          placeholder="Votre adresse Email"
+        />
+        <div id="textHelp" class="form-text text-white">
+          Veuillez renseigner votre adresse email ici.
+        </div>
+      </div>
+      <div class="mb-3 m-3">
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control mb-3"
+          id="InputPassword1"
+          placeholder="Mot de passe"
+        />
+        <input
+          formControlName="confirmPassword"
+          type="password"
+          class="form-control"
+          id="InputPassword2"
+          placeholder="Confirmer Mot de passe"
+        />
+        <div id="passwordConfirm" class="form-text text-white">
+          Confirmer votre mot de passe.
+        </div>
+      </div>
+
+      <div class="logCardFooter mb-4">
+        <button
+          [disabled]="signupForm.invalid"
+          (click)="onSignup()"
+          type="submit"
+          class="
+            btn btn-warning
+            m-3
+            text-dark
+            fw-bold
+            col-md-4 col-10
+            me-4
+            ms-4
+            mt-3
+          "
+        >
+          S'enregistrer
+        </button>
+      </div>
+    </form>
+  </div>
+</main>

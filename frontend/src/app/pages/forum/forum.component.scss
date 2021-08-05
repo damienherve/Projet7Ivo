@@ -1,0 +1,13 @@
+.backgroundImage {
+  background-image: url("../../../assets/image/testBg.jpg");
+  background-size: cover;
+  background-position: center;
+  -o-object-fit: contain;
+  object-fit: contain;
+  height: 100%;
+}
+
+.container {
+  margin-top: 1vh;
+  margin-bottom: 10vh;
+}

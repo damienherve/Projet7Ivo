@@ -1,21 +1,23 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS,HttpClientModule }    from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { ForumComponent } from './forum/forum.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { TopicComponent } from './topic/topic.component';
-import { CommentsComponent } from './comments/comments.component';
-import { CguComponent } from './cgu/cgu.component';
-import { PolitiqueComponent } from './politique/politique.component';
-import { AboutComponent } from './about/about.component';
-
+import { CreatePostComponent } from './components/create-post/create-post.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { AuthInterceptor } from './interceptors/auth-interceptor';
+import { AboutComponent } from './pages/about/about.component';
+import { CguComponent } from './pages/cgu/cgu.component';
+import { CommentsComponent } from './pages/comments/comments.component';
+import { ForumComponent } from './pages/forum/forum.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PolitiqueComponent } from './pages/politique/politique.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,22 +27,25 @@ import { AboutComponent } from './about/about.component';
     ForumComponent,
     HomeComponent,
     ProfileComponent,
-    TopicComponent,
     CommentsComponent,
     CguComponent,
     PolitiqueComponent,
     AboutComponent,
-    
+    HeaderComponent,
+    FooterComponent,
+    CreatePostComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
-    
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
