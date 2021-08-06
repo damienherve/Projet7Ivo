@@ -1,4 +1,5 @@
 isAuthenticated = require("../middleware/authValidator");
+isAdmin = require("../middleware/adminValidator");
 const Post = require("../controllers/post.controller.js");
 
 module.exports = function (app) {
@@ -12,4 +13,6 @@ module.exports = function (app) {
   app.post("/api/post/:id/comment", isAuthenticated, Post.addComment);
   // Add a clap to a post
   app.post("/api/post/:id/clap", isAuthenticated, Post.addClap);
+  // Remove a post/comment (when removing a post, removes all his comments too)
+  app.delete("/api/post/:id", isAuthenticated, isAdmin, Post.removePost);
 };

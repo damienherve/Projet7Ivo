@@ -1,0 +1,9 @@
+<div *ngIf="post" class="container">
+  <app-post [post]="post"></app-post>
+  <app-create-post
+    [postId]="post.id"
+    [isComment]="isComment"
+    [containerTitle]="createPostTitle"
+  ></app-create-post>
+  <app-posts [posts]="post.comments" [title]="postListTitle"></app-posts>
+</div>

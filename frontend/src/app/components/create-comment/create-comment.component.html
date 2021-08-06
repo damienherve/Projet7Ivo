@@ -1,0 +1,32 @@
+<div class="creatComment d-flex justify-content-center">
+  <div class="containerCard col-md-10 col-12">
+    <div class="card mb-3 mt-3 d-flex justify-content-center">
+      <div class="card-body">
+        <h5 class="card-title text-decoration-underline">topicTitle</h5>
+        <p class="card-text">topicContent</p>
+
+        <div class="mt-3 gap-2">
+          <div class="form-group">
+            <label for="comment">Commentaire:</label>
+            <textarea
+              class="form-control"
+              rows="5"
+              id="comment"
+              [(ngModel)]="text"
+            >
+            </textarea>
+          </div>
+          <div class="col-12 justify-content-end d-flex">
+            <button
+              class="commentButtons px-3 btn btn-sm btn-outline-warning mt-4"
+              href="#"
+              (click)="onComment()"
+            >
+              Commenter
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

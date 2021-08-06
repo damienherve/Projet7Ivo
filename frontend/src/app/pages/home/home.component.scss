@@ -15,9 +15,13 @@
 
 main {
   .citation {
-    margin-bottom: 30vh;
-    margin-top: 10vh;
     background-color: rgba(0, 0, 0, 0.8);
-    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 350px;
+    height: 150px;
+    margin-left: -175px;
+    margin-top: -75px;
   }
 }

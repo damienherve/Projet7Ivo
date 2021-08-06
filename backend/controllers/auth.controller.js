@@ -31,10 +31,15 @@ exports.signup = async (req, res) => {
 
   try {
     const user = await User.create(createUser);
-    const response = user.toJSON();
-    delete response.password;
-    delete response.role;
-    response.token = generateToken(user.id);
+    response = {
+      user: {
+        id: user.id,
+        fullName: user.fullName,
+        email: user.email,
+        role: user.role,
+      },
+      token: generateToken(user.id),
+    };
     res.status(201).json(response);
   } catch (err) {
     console.error("ERROR", err);
@@ -60,7 +65,12 @@ exports.login = async (req, res) => {
           return res.sendStatus(401);
         }
         return res.status(200).json({
-          userId: user.id,
+          user: {
+            id: user.id,
+            fullName: user.fullName,
+            email: user.email,
+            role: user.role,
+          },
           token: generateToken(user.id),
         });
       })

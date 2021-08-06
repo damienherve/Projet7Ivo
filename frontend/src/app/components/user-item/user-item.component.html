@@ -1,0 +1,8 @@
+<div *ngIf="user" class="d-flex flex-row justify-content-between">
+  <p>{{ user.id }}</p>
+  <p>{{ user.fullName }}</p>
+  <p>{{ user.email }}</p>
+  <p>{{ user.role === 1 ? "Admin" : "User" }}</p>
+  <p>{{ user.createdAt }}</p>
+  <button class="btn-danger" (click)="onDelete(user.id)">Supprimer</button>
+</div>

@@ -1,0 +1,45 @@
+<div class="containerPost">
+  <div class="card mb-3 mt-3">
+    <div class="card-body">
+      <h5 class="card-title text-decoration-underline">
+        {{ post.title }}
+      </h5>
+      <p class="card-text">
+        {{ post.text }}
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+        <p class="card-text m-0 d-flex align-items-center">
+          <small class="text-white"
+            >Message crée par : {{ post.user.fullName }}
+          </small>
+        </p>
+        <div class="mt-3 gap-2">
+          <button
+            type="button"
+            class="btn px-3 btn-sm btn-outline-danger m-2"
+            *ngIf="showDeleteButton"
+          >
+            Supprimer
+          </button>
+          <button
+            *ngIf="showCommentButton"
+            class="commentButtons px-3 btn btn-sm btn-outline-warning m-2"
+            [routerLink]="['/post/', post.id]"
+          >
+            Commenter
+          </button>
+          <button
+            type="button"
+            class="px-3 btn btn-sm btn-outline-warning m-2"
+            (click)="onClap(post)"
+          >
+            <i class="far fa-thumbs-up"></i
+            ><span class="badge bg-warning text-dark ms-4">{{
+              post.claps
+            }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

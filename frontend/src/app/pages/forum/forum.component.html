@@ -1,4 +1,4 @@
-<div class="container backgroundImage">
-  <app-create-post></app-create-post>
-  <app-posts></app-posts>
+<div class="backgroundImage">
+  <app-create-post [containerTitle]="createPostTitle"></app-create-post>
+  <app-posts [posts]="posts" [title]="postListTitle"></app-posts>
 </div>

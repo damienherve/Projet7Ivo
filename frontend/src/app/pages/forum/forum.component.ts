@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from 'src/app/common-types';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-forum',
@@ -14,7 +16,17 @@ export class ForumComponent implements OnInit {
   reactName = 'Jean-Louis';
   reactNameTopic = 'Mon premier message';
 
-  constructor() {}
+  posts!: Post[];
+  postListTitle = 'Les derniers Posts';
+  createPostTitle = 'Créez votre Post';
 
-  ngOnInit(): void {}
+  constructor(private postsService: PostsService) {}
+
+  ngOnInit(): void {
+    this.postsService.getPosts().subscribe((posts) => {
+      this.posts = posts;
+    });
+    // On initialise la liste en appelant une première fois la MAJ
+    this.postsService.loadPosts();
+  }
 }

@@ -22,7 +22,6 @@ exports.findPost = async (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "title", "text", "claps"],
     include: [
       {
         model: User,
@@ -32,7 +31,6 @@ exports.findPost = async (req, res) => {
         model: db.post,
         as: "comments",
         include: { model: User, attributes: ["fullName"] },
-        attributes: ["id", "title", "text", "claps"],
       },
     ],
   });
@@ -64,7 +62,6 @@ exports.addComment = async (req, res) => {
     return res.sendStatus(404);
   }
 
-  console.log("REQUEST OK");
   try {
     const post = await db.post.findOne({
       where: {
@@ -96,6 +93,21 @@ exports.addClap = async (req, res) => {
     post.claps = post.claps + 1;
     await post.save();
     res.status(201).json(post.toJSON());
+  } catch (err) {
+    res.sendStatus(404);
+  }
+};
+
+exports.removePost = async (req, res) => {
+  const postId = parseInt(req.params.id);
+
+  try {
+    await db.post.destroy({
+      where: {
+        id: postId,
+      },
+    });
+    res.status(204).json({});
   } catch (err) {
     res.sendStatus(404);
   }
